@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+  import { createStore } from "redux";
 
 // state
 const initialState = {
@@ -11,11 +11,11 @@ const initialState = {
 
 // actions creators
 
-const playPause = () => ({ type: "playPause" });
+export const playPause = () => ({ type: "playPause" });
 
-const restartGame = () => ({ type: "restart" });
+export const restartGame = () => ({ type: "restart" });
 
-const pointScored = (player) => ({
+export const pointScored = (player) => ({
   type: "pointScored",
   payload: { player: player },
 });
@@ -36,6 +36,7 @@ function reducer(state = initialState, action) {
   if (action.type === "pointScored") {
     const player = action.payload.player;
     const otherPlayer = player === "player1" ? "player2" : "player1";
+    console.log(player)
     if (state.winner) {
       // On ne peut pas marquer de point si le set est terminé
       return state;
@@ -72,4 +73,4 @@ function reducer(state = initialState, action) {
   return state;
 }
 
-const store = createStore(reducer);
+export const store = createStore(reducer);
