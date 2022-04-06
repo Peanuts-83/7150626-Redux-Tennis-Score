@@ -6,8 +6,7 @@ export default function Display() {
 
     if (state.winner) {
         return (<p className="display" id="score">{state.winner} a gagné!</p>)
-    } else if (!state.playing) {
-        return (<p className="display" id="score">Pause...</p>)
+
     } else {
         let text = `Le score est: ${state.player1} - ${state.player2} \n`
 

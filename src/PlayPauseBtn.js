@@ -1,12 +1,12 @@
-import { useDispatch } from "react-redux"
-import { playPause } from "./store"
+import { useStore } from "react-redux"
+import { autoplay } from "./store"
 
 export default function PlayPauseBtn() {
-    const dispatch = useDispatch()
-    return(
+    const store = useStore()
+    return (
         <button
             className="button"
-            onClick={() => dispatch(playPause())}
-        >Pause / Reprendre</button>
+            onClick={() => autoplay(store) }
+        > Lancer le jeu</button >
     )
 }
